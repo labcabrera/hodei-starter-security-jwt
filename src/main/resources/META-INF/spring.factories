@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.github.labcabrera.hodei.jwt.HodeiJwtAutoConfiguration
+com.github.labcabrera.hodei.security.jwt.HodeiJwtAutoConfiguration
