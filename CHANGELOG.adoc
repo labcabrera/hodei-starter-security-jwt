@@ -1,0 +1,7 @@
+= Hodei Starter Security JWT
+
+https://github.com/labcabrera/hodei-starter-security-jwt
+
+== 1.0.0
+
+- Initial version.

@@ -1,0 +1,46 @@
+= Hodei Starter JWT
+
+Auto-configurable Spring Boot module that includes web security configuration to perform
+authentication and/or authorization based on JWT tokens.
+
+== Configuration
+
+Example of configuration for an application that only requires authorization:
+
+----
+app:
+  security:
+    jwt:
+      secret: ${APP_JWT_SECRET:changeit}
+      expiration: 18000
+      alternate-header: X-Authorization
+    authentication:
+      enabled: false
+      path: /token
+    authorization:
+      enabled: true
+    unsecured:
+      paths: >-
+        /,
+        /v3/api-docs,
+        /v3/api-docs/**,
+        /swagger-ui/**,
+        /swagger-ui.html,
+        /swagger-resources/**,
+        /webjars/**,
+        /actuator,
+        /actuator/**
+----
+
+In the case that the standard Authorization header is used by another system before the invocation
+of our application we have the option to set the name of the alternative header through the
+`alternate-header` property.
+
+The token expiration value is expressed in minutes.
+
+== Transitive dependencies
+
+- _io.jsonwebtoken:jjwt_
+
+ 
+
